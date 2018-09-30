@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map OLED
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)	KEYWORD1#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+start	KEYWORD2
+endMod	KEYWORD2
+freeMod	KEYWORD2
+write_byte	KEYWORD2
+wait_ack	KEYWORD2
+yack	KEYWORD2
+nack	KEYWORD2
+read_byte	KEYWORD2
+send_addresses	KEYWORD2
+oled_init	KEYWORD2
+oled_write_cmd	KEYWORD2
+oled_wrire_data	KEYWORD2
+oled_clear	KEYWORD2
+oled_full	KEYWORD2
+oled_page_pos	KEYWORD2
+displayPic_B	KEYWORD2
+displayPic_F	KEYWORD2
+cleanLeft	KEYWORD2
+cleanRight	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
