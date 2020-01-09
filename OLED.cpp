@@ -1,13 +1,13 @@
 #include "OLED.h"	
 void freeMod(void){
-				pinMode(SCL,1);
-				pinMode(SDA,1);
+	pinMode(SCL,1);
+	pinMode(SDA,1);
 	digitalWrite(SCL,1);
 	digitalWrite(SDA,1);
 }	
 void start (){
-				pinMode(SDA,1);
-				pinMode(SCL,1);
+	pinMode(SDA,1);
+	pinMode(SCL,1);
 	digitalWrite(SDA,1);
 	//delayMicroseconds(2);
 	digitalWrite(SCL,1);
@@ -17,7 +17,7 @@ void start (){
 	digitalWrite(SCL,0);
 }
 void endMod (){
-  pinMode(SCL,1);
+  	pinMode(SCL,1);
 	pinMode(SDA,1);
 	digitalWrite(SCL,0);
 	delayMicroseconds(2);
@@ -29,8 +29,8 @@ void endMod (){
 	delayMicroseconds(4);
 }
 void yack(){
-  pinMode(SCL,1);
-	pinMode(SDA,1);
+  	 pinMode(SCL,1);
+	 pinMode(SDA,1);
 	 digitalWrite(SCL,0);
 	 delayMicroseconds(4);
 	 digitalWrite(SDA,0);
@@ -40,8 +40,8 @@ void yack(){
 	 digitalWrite(SCL,0);
 }
 void nack(){
-  pinMode(SCL,1);
-	pinMode(SDA,1);
+  	 pinMode(SCL,1);
+	 pinMode(SDA,1);
 	 digitalWrite(SCL,0);
 	 delayMicroseconds(4);
 	 digitalWrite(SDA,1);
@@ -51,15 +51,15 @@ void nack(){
 	 digitalWrite(SCL,0);
 }
 char wait_ack(){//0 is Acked,1 is not acked;
-				pinMode(SDA,1);
-       pinMode(SCL,1);
+	pinMode(SDA,1);
+        pinMode(SCL,1);
 	int x;
 	digitalWrite(SCL,0);
 	digitalWrite(SDA,1);
 	delayMicroseconds(4);
 	digitalWrite(SCL,1);
 	delayMicroseconds(2);
-				pinMode(SDA,INPUT);
+	pinMode(SDA,INPUT);
 	while(digitalRead(SDA))
 	{
 		x++;
@@ -73,8 +73,8 @@ char wait_ack(){//0 is Acked,1 is not acked;
 	return 0;
 }
 void write_byte(uchar data_in){
-				pinMode(SDA,1);
-       pinMode(SCL,1);
+	pinMode(SDA,1);
+        pinMode(SCL,1);
 	uchar i;
 	digitalWrite(SCL,0);
 	for (i=0;i<8;i++)
@@ -92,8 +92,8 @@ void write_byte(uchar data_in){
 }
 uchar read_byte(uchar ack)//1 ack;0 not ack;
 {
-				pinMode(SDA,1);
-       pinMode(SCL,1);
+	pinMode(SDA,1);
+        pinMode(SCL,1);
 	uchar x=0,i;
 	digitalWrite(SCL,0);
 	for (i=0;i<8;i++)
@@ -102,10 +102,10 @@ uchar read_byte(uchar ack)//1 ack;0 not ack;
 		delayMicroseconds(2);
 		digitalWrite(SCL,1);
 		x<<=1;
-								pinMode(SDA,INPUT);
+		pinMode(SDA,INPUT);
 		if(digitalRead(SDA)) x++;
 		delayMicroseconds(2);
-								pinMode(SDA,OUTPUT);
+		pinMode(SDA,OUTPUT);
 	}
 	if (!ack)
 		nack();
